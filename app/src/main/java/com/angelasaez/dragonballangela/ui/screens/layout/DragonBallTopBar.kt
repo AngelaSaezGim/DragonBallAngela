@@ -24,7 +24,7 @@ fun DragonBallTopBar() {
         navigationIcon = {
             Icon(
                 painter = painterResource(id = R.drawable.dragon_ball_ball),
-                contentDescription = "Imagen autor",
+                contentDescription = "dragon ball ball",
                 tint = Color.Yellow,
                 modifier = Modifier
                     .size(50.dp),
@@ -33,13 +33,13 @@ fun DragonBallTopBar() {
         title = {
             Image(
                 painter = painterResource(id = R.drawable.dragon_ball_z_logo),
-                contentDescription = "Imagen autor",
+                contentDescription = "logo dragon ball",
                 modifier = Modifier
                     .size(200.dp),
             )
         },
         actions = {
-            Text(text = "Akira Toriyama" )
+            Text(text = "Akira Toriyama", modifier = Modifier.padding(20.dp,0.dp) )
         }
     )
 
