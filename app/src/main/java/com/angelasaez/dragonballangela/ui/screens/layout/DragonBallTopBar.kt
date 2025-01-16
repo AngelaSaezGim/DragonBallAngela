@@ -3,8 +3,6 @@ package com.angelasaez.dragonballangela.ui.screens.layout
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,7 +13,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.angelasaez.dragonballangela.R
-import com.angelasaez.dragonballangela.ui.screens.common.CustomSpacer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -23,9 +20,9 @@ fun DragonBallTopBar() {
     CenterAlignedTopAppBar(
         navigationIcon = {
             Icon(
-                painter = painterResource(id = R.drawable.dragon_ball_ball),
-                contentDescription = "dragon ball ball",
-                tint = Color.Yellow,
+                painter = painterResource(id = R.drawable.dragon_ball_vector),
+                contentDescription = "Dragon Ball Vector",
+                tint = Color.Unspecified,
                 modifier = Modifier
                     .size(50.dp),
             )
