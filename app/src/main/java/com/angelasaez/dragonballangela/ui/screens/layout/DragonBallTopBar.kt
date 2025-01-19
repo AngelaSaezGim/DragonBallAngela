@@ -7,10 +7,14 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.angelasaez.dragonballangela.R
 
@@ -36,8 +40,13 @@ fun DragonBallTopBar() {
             )
         },
         actions = {
-            Text(text = "Akira Toriyama", modifier = Modifier.padding(20.dp,0.dp) )
-        }
+            Text(text = stringResource(R.string.db_author_name),
+                 modifier = Modifier.padding(20.dp,0.dp),
+                 fontWeight = FontWeight.Bold)
+        },
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = colorResource(id = R.color.firs_color_theme)
+        )
     )
 
 }

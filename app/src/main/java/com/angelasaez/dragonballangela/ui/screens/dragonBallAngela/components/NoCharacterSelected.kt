@@ -10,8 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
@@ -42,10 +43,10 @@ fun NoCharacterSelected (modifier: Modifier = Modifier) {
             CustomSpacer(20)
 
             Text(
-                text = "Selecciona un personaje:",
+                text = stringResource(R.string.select_character),
                 style = TextStyle(
                     fontSize = 30.sp,
-                    color = Color.White,
+                    color = colorResource(id = R.color.white),
                     fontFamily = FontFamily.Cursive,
                     fontWeight = Bold
                 )

@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">DragonBallAngela</string>
+    <string name="app_name" translatable="false">DragonBallAngela</string>
+    <string name="author_name">Ángela</string>
+    <string name="db_author_name">Akira Toriyama</string>
+    <string name="name_character">Nombre: %1$s ( %2$s)</string>
+    <string name="alias_character">Alias: %1$s</string>
+    <string name="gender_character">Género: %1$s</string>
+    <string name="species_character">Especie: %1$s</string>
+    <string name="birth_character">Año de nacimiento: %1$s</string>
+    <string name="know_more_character">Saber Más</string>
+    <string name="description_character">Descripción</string>
+    <string name="select_character">Selecciona un personaje:</string>
 </resources>

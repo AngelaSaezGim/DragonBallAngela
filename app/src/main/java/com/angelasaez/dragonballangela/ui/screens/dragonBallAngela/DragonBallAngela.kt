@@ -23,7 +23,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import com.angelasaez.dragonballangela.R
 import com.angelasaez.dragonballangela.model.DragonBallCharacter
 import com.angelasaez.dragonballangela.ui.screens.dragonBallAngela.components.InfoCharacter
 import com.angelasaez.dragonballangela.ui.screens.dragonBallAngela.components.ListCharactersDB
@@ -39,6 +41,7 @@ fun DragonBallAngela() {
     Scaffold (
         modifier = Modifier.fillMaxSize(),
         topBar = { DragonBallTopBar() },
+        containerColor = colorResource(id = R.color.firs_color_theme),
         floatingActionButton = { DragonBallFloatingButton() },
         floatingActionButtonPosition = FabPosition.End
         )
@@ -57,14 +60,15 @@ fun DragonBallAngela() {
                     .background(
                         Brush.verticalGradient(
                             colors = listOf(
-                                Color(0xFFEA4E4E),
-                                Color(0xFFF11919)
+                                colorResource(id = R.color.second_color_theme),
+                                colorResource(id = R.color.third_color_theme)
                             )
                         )
                     ),
                 verticalArrangement = Arrangement.Center
             ) {
                 ListCharactersDB(
+                    //actualiza estado de personaje (si se selecciona o no)
                     onCharacterSelected = { character ->
                         selectedCharacter.value = character
                     },
@@ -80,10 +84,11 @@ fun DragonBallAngela() {
                     .background(
                         Brush.verticalGradient(
                             colors = listOf(
-                                Color(0xFFEA4E4E),
-                                Color(0xFFF11919)
+                                colorResource(id = R.color.second_color_theme),
+                                colorResource(id = R.color.third_color_theme)
                             )
                         )
+
                     )
             ) {
                 if (selectedCharacter.value == null) {
@@ -98,8 +103,9 @@ fun DragonBallAngela() {
                             .align(Alignment.End)
                             .size(30.dp)
                     ) {
+                        //el boton tiene un icono y una cajita debajo (estética)
                         Box(
-                            Modifier.background(Color.White)
+                            Modifier.background(colorResource(id = R.color.white))
                         ){
                         Icon(
                             imageVector = Icons.Default.Close,
@@ -107,6 +113,7 @@ fun DragonBallAngela() {
                         )
                         }
                     }
+                    //Card con info de personajes (
                     InfoCharacter(selectedCharacter = selectedCharacter.value)
                 }
             }

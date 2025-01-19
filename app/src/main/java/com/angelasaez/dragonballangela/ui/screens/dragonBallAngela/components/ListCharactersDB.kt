@@ -10,8 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -19,11 +17,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,15 +38,17 @@ fun ListCharactersDB(onCharacterSelected: (DragonBallCharacter) -> Unit,  select
         groupedDBCharacters.forEach { (header, names) ->
             stickyHeader {
                 Box(
-                    modifier = Modifier.fillMaxWidth().background(Color(0xFFFF6767))
+                    modifier = Modifier.fillMaxWidth()
+                        .background(colorResource(id = R.color.box_header_color))
                         .padding(vertical = 6.dp)
                 ) {
                     Text(
                         "$header",
                         modifier = Modifier.align(Alignment.Center).padding(horizontal = 16.dp),
-                        style = TextStyle(
-                            color = Color.White, fontSize = 22.sp, fontWeight = Bold
-                        )
+                        color = colorResource(id = R.color.white),
+                        fontSize = 22.sp,
+                        fontWeight = Bold
+
                     )
                 }
                 HorizontalDivider()
@@ -62,9 +60,9 @@ fun ListCharactersDB(onCharacterSelected: (DragonBallCharacter) -> Unit,  select
                     headlineContent = {
                         Text(
                             text = character.spanishName,
-                            style = TextStyle(
-                                fontSize = 18.sp, color = Color(0xFFFF5722), fontWeight = Bold
-                            )
+                            fontSize = 18.sp,
+                            color = colorResource(id = R.color.text_character_color),
+                            fontWeight = Bold
                         )
                     },
                     trailingContent = {
@@ -81,28 +79,14 @@ fun ListCharactersDB(onCharacterSelected: (DragonBallCharacter) -> Unit,  select
                     },
                     modifier = Modifier.fillMaxWidth()
                         .background(
-                            if (selectedCharacter == character) Color(0xFFF3C910).copy(alpha = 0.6f)
+                            if (selectedCharacter == character) colorResource(id = R.color.selected_character_color).copy(alpha = 0.6f)
                             else Color.Transparent
                         )
                         .padding(vertical = 15.dp, horizontal = 30.dp)
-                        .border(1.dp, Color.Black).clickable { onCharacterSelected(character) }
+                        .border(1.dp, colorResource(id = R.color.black))
+                        .clickable { onCharacterSelected(character) }
                 )
             }
         }
     }
 }
-/*
-               Text(
-                   character.spanishName,
-                   modifier = Modifier
-                       .background(Color(0xFFF3C910).copy(alpha = 0.6f)
-                       )
-
-                       .padding(vertical = 12.dp, horizontal = 20.dp)
-                       .fillMaxWidth(),
-                   style = TextStyle(
-                       fontSize = 18.sp,
-                       color = Color.White,
-                       fontWeight = Bold
-                   )
-               )*/
